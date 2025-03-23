@@ -14,17 +14,16 @@ if "role" not in st.session_state:
 
 # تسجيل الدخول
 if st.session_state.username == "":
-    st.title("تسجيل  الدخول")
-
+    st.title("تسجيل الدخول")
     username_input = st.text_input("ادخل اسم المستخدم:")
 
     if st.button("دخول"):
-    if username_input.strip() == "":
-        st.warning("الرجاء إدخال اسمك.")
-    else:
-        st.session_state.username = username_input.strip()
-        st.session_state.role = "reviewer" if username_input in reviewers else "employee"
-        st.experimental_rerun()  # <--- هذا السطر هو الحل
+        if username_input.strip() == "":
+            st.warning("الرجاء إدخال اسمك.")
+        else:
+            st.session_state.username = username_input.strip()
+            st.session_state.role = "reviewer" if username_input in reviewers else "employee"
+            st.experimental_rerun()  # هذا يعيد تحميل الصفحة بعد تسجيل الدخول
 
 else:
     # بعد تسجيل الدخول
@@ -81,5 +80,6 @@ else:
 
     elif page == "الطلبات المعلقة":
         st.info("هذه الصفحة سيتم تجهيزها لعرض الطلبات المعلقة الخاصة بك.")
+
     elif page == "الطلبات الموافق عليها":
         st.info("هذه الصفحة سيتم تجهيزها لعرض الطلبات الموافق عليها الخاصة بك.")
