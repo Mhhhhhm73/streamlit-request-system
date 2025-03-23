@@ -14,7 +14,7 @@ if "role" not in st.session_state:
 
 # تسجيل الدخول
 if st.session_state.username == "":
-    st.title("تسجيل الدخول")
+    st.title("تسجيل  الدخول")
 
     username_input = st.text_input("ادخل اسم المستخدم:")
 
