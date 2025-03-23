@@ -19,12 +19,12 @@ if st.session_state.username == "":
     username_input = st.text_input("ادخل اسم المستخدم:")
 
     if st.button("دخول"):
-        if username_input.strip() == "":
-            st.warning("الرجاء إدخال اسمك.")
-        else:
-            st.session_state.username = username_input.strip()
-            st.session_state.role = "reviewer" if username_input in reviewers else "employee"
-            st.experimental_rerun()
+    if username_input.strip() == "":
+        st.warning("الرجاء إدخال اسمك.")
+    else:
+        st.session_state.username = username_input.strip()
+        st.session_state.role = "reviewer" if username_input in reviewers else "employee"
+        st.experimental_rerun()  # <--- هذا السطر هو الحل
 
 else:
     # بعد تسجيل الدخول
