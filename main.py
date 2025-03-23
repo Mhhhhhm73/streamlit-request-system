@@ -17,7 +17,8 @@ if st.session_state.username == "":
         else:
             st.session_state.username = username_input.strip()
             st.session_state.role = "reviewer" if username_input in reviewers else "employee"
-            st.experimental_rerun()
+            st.success(f"تم تسجيل الدخول كـ {st.session_state.username}")
+st.write("هل تظهر هذه الرسالة؟ إذا نعم، فإن الجلسة تعمل.")
 else:
     st.sidebar.success(f"مرحبًا، {st.session_state.username}")
     page = st.sidebar.selectbox("انتقل إلى:", ["رفع طلب جديد", "الطلبات المعلقة", "الطلبات الموافق عليها"])
