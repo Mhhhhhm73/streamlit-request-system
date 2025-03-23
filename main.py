@@ -7,14 +7,11 @@ from datetime import datetime
 reviewers = ["سامي", "ندى", "عبدالله", "فهد", "ريم", "نورة"]
 
 # تخزين الجلسة
-if "username" not in st.session_state:
-    st.session_state.username = ""
-if "role" not in st.session_state:
-    st.session_state.role = ""
+if "username" not in st.session_state: st.session_state.username = ""
+if "role" not in st.session_state: st.session_state.role = ""
 
 # تسجيل الدخول
-if st.session_state.username == "":
-    st.title("تسجيل الدخول")
+if st.session_state.username == "": st.title("تسجيل الدخول")
     username_input = st.text_input("ادخل اسم المستخدم:")
 
     if st.button("دخول"):
